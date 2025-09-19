@@ -6,29 +6,39 @@ class Program
 {
     static void Main(string[] args)
     {
+        string letter = "";
         Console.WriteLine("How bad are u failing, scale of grade?");
         string grade = Console.ReadLine();
         int gradeNum = int.Parse(grade);
 
         if (gradeNum >= 90)
         {
-            Console.WriteLine("A");
+            letter = "A";
         }
         else if (gradeNum >= 80)
         {
-            Console.WriteLine("B");
+            letter = "B";
         }
         else if (gradeNum >= 70)
         {
-            Console.WriteLine("C");
+            letter = "C";
         }
         else if (gradeNum >= 60)
         {
-            Console.WriteLine("D");
+            letter = "D";
         }
         else
         {
-            Console.WriteLine("F");
+            letter = "F";
+        }
+        Console.WriteLine($"{letter}");
+        if (gradeNum < 70)
+        {
+            Console.WriteLine("BRUH");
+        }
+        else
+        {
+            Console.WriteLine("NICE");
         }
     }
 }
