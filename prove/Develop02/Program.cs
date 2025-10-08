@@ -3,6 +3,7 @@
 // To write, simply push it into Journal -- 
 // To display, simply pull all from journal --
 // To provide, grab a random prompt (handle randomizer in prompt tab) --
+//Handle datetime as well as sotre it
 // To quit, end program. --
 
 using System;
@@ -18,12 +19,16 @@ class Program
         Prompt mainPrompt = new Prompt();
         Journal mainJournal = new Journal();
 
+        DateTime dtn = DateTime.Now;
+        string dt = dtn.ToString("dd/MM/yyyy HH:mm");
+
         while (_flag == true)
         {
             mainMenu.fullMenu();
             int uzer = int.Parse(Console.ReadLine());
             if (uzer == 1)
             {
+                mainJournal._entries.Add(dt);
                 mainJournal.appendEntry();
             }
             else if (uzer == 2)
@@ -33,6 +38,7 @@ class Program
             }
             else if (uzer == 3)
             {
+                mainJournal._entries.Add(dt);
                 mainPrompt.getPrompt();
                 mainJournal._entries.Add(mainPrompt.promptContainer);
                 mainJournal.appendEntry();
