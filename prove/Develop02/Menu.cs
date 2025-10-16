@@ -1,6 +1,6 @@
 //Attributes: options, 
 //Behaviors:
-// Display the menu when called
+//Display the menu when called
     
 class Menu
 {

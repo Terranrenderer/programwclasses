@@ -22,6 +22,7 @@ class Prompt
     {
         Random randomGenerator = new Random();
         int index = randomGenerator.Next(_questions.Count);
+        
         promptContainer = _questions[index];
         Console.WriteLine(promptContainer);
     }

@@ -28,7 +28,6 @@ class Program
             int uzer = int.Parse(Console.ReadLine());
             if (uzer == 1)
             {
-                mainJournal._entries.Add(dt);
                 mainJournal.appendEntry();
             }
             else if (uzer == 2)
@@ -38,7 +37,6 @@ class Program
             }
             else if (uzer == 3)
             {
-                mainJournal._entries.Add(dt);
                 mainPrompt.getPrompt();
                 mainJournal._entries.Add(mainPrompt.promptContainer);
                 mainJournal.appendEntry();
