@@ -10,6 +10,10 @@ class Program
         Scripture scripture = new Scripture();
         Word word = new Word("");
 
+        Console.WriteLine("Type a reference");
+        string refEntry = Console.ReadLine();
+        
+        Console.WriteLine("Type a scripture to begin");
         string entry = Console.ReadLine();
 
         scripture.handleEntry(entry);
@@ -19,22 +23,22 @@ class Program
 
         while (true)
         {
-            string checker = Console.ReadLine();
-            if (checker == "")
+            while (scripture.knowHidden() == false)
             {
-                scripture.HideRandom();
-                reference.Display();
-                scripture.Display();
-
+                string checker = Console.ReadLine();
+                if (checker == "")
+                {
+                    scripture.HideRandom();
+                    reference.Display();
+                    scripture.Display();
+                }
+                else
+                {
+                    break;
+                }
             }
-            else if(scripture.knowHidden() == true)
-            {
-                break;
-            } 
-            else
-            {
-                break;
-            }
+            Console.WriteLine("OK");
+            break;
         }
-    }
+    } 
 }
