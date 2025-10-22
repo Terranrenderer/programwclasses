@@ -2,11 +2,11 @@ using System.ComponentModel.DataAnnotations;
 
 class Reference
 {
-    public string _REF = "John 3:16";
+    private string _REF = "John 3:16 ";
 
-    public void display()
+    public void Display()
     {
-        Console.WriteLine(_REF);
+        Console.Write(_REF);
     }
 }
 

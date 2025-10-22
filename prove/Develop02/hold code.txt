@@ -1,107 +1,31 @@
-using System;
-using System.ComponentModel.DataAnnotations;
+// Create a list of scriptures
+// Get random and save index
+// Methods: Get scripture, get index
 
-class Program
+using System.ComponentModel;
+
+class Scripture
 {
-    static void Main(string[] args)
+    public List<string> _scridders = new List<string>
+    public List<string> _entries = new List<string>
     {
-        Journal myJournal = new Journal();
-        Menu myMenu = new Menu();
-        myJournal.Initialize();
+        "Buh",
+        "Cuh",
+        "And i was uber straight frfr"
+    };
 
-
-        while (myMenu._flag == true)
-        {
-            myMenu.Display();
-        }
-
-    }
-}
-class Menu
-{
-    // attributes
-    public string _choice;
-    public string _write;
-    public string _display;
-    public string _save;
-    public string _load;
-    public string _provide;
-    public string _quit;
-    public bool _flag = true;
-
-    // behaviors
-    public void fullMenu()
+    public void getScridder()
     {
-        Console.WriteLine("1. write");
-        Console.WriteLine("2. display");
-        Console.WriteLine("3. save");
-        Console.WriteLine("4. load");
-        Console.WriteLine("5. provide");
-        Console.WriteLine("6. quit");
-    }
-    Journal myJournal = new Journal();
-    public void Display()
-    {
-        fullMenu();
-        int uzerChoice = int.Parse(Console.ReadLine());
-        
-        if (uzerChoice == 6)
+        foreach (string scridder in _scridders)
         {
-            _flag = false;
-        }
-        else if (uzerChoice == 5)
-        {
-            Prompt myPrompt = new Prompt();
 
-            myJournal.AppendEntry(myPrompt);
-            myJournal.Display();
-        }
-        else
-        {
-            Console.WriteLine("OOOOOOF");
+            Console.WriteLine(scridder);
+
+            _entries.add(entry)
         }
     }
-}
-class Journal
-{
-    //attribute
-    public List<Prompt> _questions;
-
-    //behaviors
-    // Grab a prompt and throw it into the conosle
-    public void Initialize()
+    public void append()
     {
-        _questions = new List<Prompt>();
-    }
-    public void AppendEntry(Prompt p)
-    {
-        _questions.Add(p);
-    }
-    public void Display()
-    {
-        Random randomGenerator = new Random();
-        int index = randomGenerator.Next(_questions.Count);
-        _questions[index].Display();
-
-    }
-}
-class Prompt()
-{
-    //attributes
-    public string _smell = "gay";
-    public string _lord = "god";
-    public string _smile = "ur mom makes me happy";
-    public string _hard = "i am";
-    public string _learn = "school";
-
-    //behaviors
-
-    public void Display()
-    {
-        Console.WriteLine($"{_smell}");
-        Console.WriteLine($"{_lord}");
-        Console.WriteLine($"{_smile}");
-        Console.WriteLine($"{_hard}");
-        Console.WriteLine($"{_learn}");
+        string entry = 
     }
 }
