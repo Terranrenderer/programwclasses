@@ -12,6 +12,7 @@ class Program
 
         Console.WriteLine("Type a reference");
         string refEntry = Console.ReadLine();
+        reference.handleRefEntry(refEntry);
         
         Console.WriteLine("Type a scripture to begin");
         string entry = Console.ReadLine();
@@ -28,6 +29,7 @@ class Program
                 string checker = Console.ReadLine();
                 if (checker == "")
                 {
+                    Console.Clear();
                     scripture.HideRandom();
                     reference.Display();
                     scripture.Display();

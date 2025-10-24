@@ -28,27 +28,28 @@ class Scripture
     }
     public void HideRandom()
     {
-    Random random = new Random();
+        // LOOK AT MY CODE: THE ITERATION IS BRINGING TEARS TO MY EYES
+        Random random = new Random();
+        List<int> indexes = new List<int>();
 
-    List<int> indexes = new List<int>();
-    for (int i = 0; i < _scridders.Count; i++)
-    {
-        if (_scridders[i].IsRevealed())
+        for (int i = 0; i < _scridders.Count; i++)
         {
-            indexes.Add(i);
+            if (_scridders[i].IsRevealed())
+            {
+                indexes.Add(i);
+            }
         }
+
+        if (indexes.Count == 0)
+        {
+            return;
+        }
+
+        int randomIndexInList = random.Next(indexes.Count);
+        int wordIndex = indexes[randomIndexInList];
+
+        _scridders[wordIndex].Hide();
     }
-
-    if (indexes.Count == 0)
-    {
-        return;
-    }
-
-    int randomIndexInList = random.Next(indexes.Count);
-    int wordIndex = indexes[randomIndexInList];
-
-    _scridders[wordIndex].Hide();
-}
 
     public void Display()
     {

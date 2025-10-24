@@ -10,7 +10,6 @@ class Reference
     }
     public void Display()
     {
-        Console.Write(_REF);
+        Console.Write(_REF + ":");
     }
 }
-
